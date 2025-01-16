@@ -1,0 +1,44 @@
+/* Processing animation */
+        @keyframes processing {
+            0% { opacity: 0; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1); }
+            100% { opacity: 0; transform: scale(0.8); }
+        }
+        <div class="analysis-result-section" id="analysis-result-section">
+            <h3>Analysis Result</h3>
+            {% if show_processing %}
+                <!-- Processing Animation -->
+                <div class="processing" style="animation: fadeIn 1.5s;">
+                    <p style="font-size: 20px; color: #5a6268; animation: fadeIn 1.5s;">Processing...</p>
+                </div>
+            {% elif ai_generated is not none %}
+                <div class="result-item" style="animation: fadeIn 1.5s;">
+                    {% if ai_generated %}
+                        <p style="font-size: 20px; color: #d9534f; animation: fadeIn 1.5s;">AI GENERATED!!!!</p>
+                        <p style="font-size: 18px;">{{ probability * 100 | round(2) }}% AI detected for AI.</p>
+                    {% else %}
+                        <p style="font-size: 20px; color: #5cb85c; animation: fadeIn 1.5s;">PASSES AS HUMAN!</p>
+                        <p style="font-size: 18px;">{{ (100 - (probability * 100)) | round(2) }}% AI detection.</p>
+                    {% endif %}
+                </div>
+            {% else %}
+                <p>No results to display. Please check your input.</p>
+            {% endif %}
+        </div>
+        
+        <!-- CSS for Processing Animation -->
+        <style>
+            .processing {
+                text-align: center;
+                font-size: 20px;
+                font-weight: bold;
+                color: #6c757d;
+            }
+        
+            @keyframes fadeIn {
+                0% { opacity: 0; }
+                50% { opacity: 0.5; }
+                100% { opacity: 1; }
+            }
+        </style>
+        
