@@ -4,7 +4,7 @@ flask_mysqldb
 Flask-Mail2
 flask_login
 flask_socketio
-mysql.connector
+mysql-connector
 requests
 pandas 
 joblib
