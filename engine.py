@@ -11,13 +11,12 @@ import pandas as pd
 import joblib
 import nltk
 from nltk.tokenize import sent_tokenize
-from bs4 import BeautifulSoup
 import docx
 import PyPDF2
+from bs4 import BeautifulSoup
 import secrets
 # Speech synthesis and text-to-speech libraries
 import pyttsx3
-from gtts import gTTS
 # Machine learning libraries
 from flask_login import LoginManager, UserMixin, login_user, login_required, current_user, logout_user
 from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer

@@ -1,0 +1,16 @@
+flask
+flask_sqlalchemy
+flask_mysqldb 
+Flask-Mail2
+flask_login
+flask_socketio
+mysql.connector
+requests
+pandas 
+joblib
+nltk
+beautifulsoup4
+docx
+PyPDF2
+pyttsx3
+scikit-learn
